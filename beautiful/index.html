@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Dialogue Ireland — redesign concept (draft)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--g:#173526;--g2:#1f4a35;--gold:#e2c56f;--clay:#c4573a;--cream:#f7f4ee;--ink:#1c2a24;--mut:#5a6a62;--sand:#ece4d3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.65 'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--cream)}
+h1,h2,h3,.logo{font-family:'Fraunces',Georgia,serif;line-height:1.15;margin:0}
+a{color:inherit}.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.proto{background:#fff3c4;color:#5b4a00;text-align:center;font-size:13px;padding:6px 12px}
+.help{background:var(--gold);color:#2b2300;text-align:center;font-size:15px;padding:9px 14px}.help a{font-weight:700}
+header{background:var(--g);color:#fff;position:sticky;top:0;z-index:9}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-size:22px;font-weight:700}.logo b{color:var(--gold)}
+nav{display:flex;gap:22px;font-size:15px}nav a{text-decoration:none;opacity:.88}nav a:hover{opacity:1;color:var(--gold)}
+.cta{background:var(--clay);color:#fff;padding:9px 18px;border-radius:99px;text-decoration:none;font-weight:700;font-size:15px}
+.hero{background:linear-gradient(160deg,var(--g) 0%,var(--g2) 60%,#2d6a4a 100%);color:#fff;position:relative;overflow:hidden;padding:84px 0 150px}
+.hero h1{font-size:clamp(38px,6vw,68px);max-width:760px}.hero h1 em{color:var(--gold);font-style:normal}
+.hero p{max-width:620px;font-size:19px;opacity:.92;margin:22px 0 32px}
+.btn{display:inline-block;padding:14px 26px;border-radius:99px;text-decoration:none;font-weight:700;margin:0 10px 10px 0}
+.b1{background:var(--clay);color:#fff}.b2{border:2px solid rgba(255,255,255,.45);color:#fff}
+.hills{position:absolute;left:0;right:0;bottom:-2px;width:100%;height:150px}
+.ogham{position:absolute;right:4%;top:40px;width:240px;opacity:.9}
+@media(max-width:820px){.ogham{display:none}nav{display:none}}
+.doors{margin-top:-90px;position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:900px){.doors{grid-template-columns:1fr 1fr}}@media(max-width:520px){.doors{grid-template-columns:1fr}}
+.door{background:#fff;border-radius:20px;padding:26px 22px;text-decoration:none;box-shadow:0 14px 40px rgba(23,53,38,.14);transition:.25s;border-top:5px solid var(--c)}
+.door:hover{transform:translateY(-6px)}.door svg{width:54px;height:54px;margin-bottom:12px}
+.door h3{font-size:22px}.door p{margin:6px 0 10px;color:var(--mut);font-size:15px}.door span{color:var(--c);font-weight:700;font-size:15px}
+section{padding:80px 0}.eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:12px;font-weight:700;color:var(--clay)}
+h2{font-size:clamp(30px,4vw,44px);margin:8px 0 14px}.lead{color:var(--mut);max-width:640px}
+.quote{background:var(--g);color:#fff;text-align:center}.quote blockquote{font:600 clamp(22px,3vw,32px)/1.4 'Fraunces',serif;max-width:820px;margin:0 auto}
+.quote blockquote:before{content:"“";display:block;font-size:90px;color:var(--gold);line-height:.6}
+.quote cite{display:block;margin-top:22px;color:var(--gold);font:15px 'DM Sans'}
+.paths{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+@media(max-width:900px){.paths{grid-template-columns:1fr 1fr}}@media(max-width:520px){.paths{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid #e6dfd0;border-radius:18px;padding:24px}
+.card .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:22px;margin-bottom:12px}
+.card h3{font-size:19px}.card p{color:var(--mut);font-size:15px;margin:8px 0}.card a{color:var(--clay);font-weight:700;text-decoration:none;font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:34px}@media(max-width:760px){.steps{grid-template-columns:1fr}}
+.step{background:var(--sand);border-radius:18px;padding:26px}.step i{font:700 40px 'Fraunces';color:var(--clay);font-style:normal}
+.alt{background:var(--sand)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.chips a{background:#fff;border:1px solid #d9cfb9;padding:8px 16px;border-radius:99px;text-decoration:none;font-size:15px}.chips a:hover{background:var(--g);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0}@media(max-width:640px){.stats{grid-template-columns:1fr}}
+.stat{background:var(--g);color:#fff;border-radius:18px;padding:24px}.stat b{font:700 44px 'Fraunces';color:var(--gold);display:block}
+form.s{display:flex;gap:10px;flex-wrap:wrap}form.s input{flex:1;min-width:220px;padding:14px 18px;border-radius:99px;border:1px solid #cfc5ad;font:inherit}
+form.s button{border:0;cursor:pointer;font:inherit}
+footer{background:#10261a;color:#cfe0d5;padding:56px 0 30px;font-size:15px}footer .goal{font:600 22px/1.4 'Fraunces',serif;color:#fff;max-width:720px}
+footer small{display:block;margin-top:26px;opacity:.7}
+.reveal{opacity:0;transform:translateY(22px);transition:.7s}.reveal.in{opacity:1;transform:none}
+</style></head><body>
+<div class="proto">Design concept for review — not the official Dialogue Ireland website. Draft text by Svetlana Krylova.</div>
+<div class="help">Concerned about a loved one? <a href="mailto:info@dialogueireland.ie">Write to us in confidence</a></div>
+<header><div class="wrap"><a class="logo" href="#top" style="text-decoration:none">Dialogue <b>Ireland</b></a>
+<nav><a href="#help">I Need Help</a><a href="#learn">Learn</a><a href="#research">Research</a><a href="#about">About</a><a href="#archive">Archive</a></nav>
+<a class="cta" href="#help">Get help</a></div></header>
+
+<div class="hero" id="top"><div class="wrap">
+<svg class="ogham" viewBox="0 0 240 300" fill="none" stroke="#e2c56f" stroke-width="3" stroke-linecap="round"><path d="M120 10v280" stroke-width="5"/><g opacity=".9"><path d="M120 50h-40M120 80h-55M120 110h-30M120 150h50M120 180h35M120 210h60M120 250h-45"/></g><circle cx="120" cy="150" r="115" opacity=".25"/><circle cx="120" cy="150" r="85" opacity=".15"/></svg>
+<h1>You're not alone. <em>There is a way forward.</em></h1>
+<p>Supporting people through education, dialogue and research. Confidential help for anyone affected by undue psychological influence, spiritual abuse or high-demand groups.</p>
+<a class="btn b1" href="#help">I Need Help</a><a class="btn b2" href="#learn">Learn about cultism</a></div>
+<svg class="hills" viewBox="0 0 1440 150" preserveAspectRatio="none"><path d="M0 90C240 20 420 130 700 80s520-70 740 10V150H0z" fill="#2d6a4a" opacity=".55"/><path d="M0 120C300 60 520 140 820 100s430-40 620 0V150H0z" fill="#f7f4ee"/></svg></div>
+
+<div class="wrap doors reveal">
+<a class="door" style="--c:#c4573a" href="#help"><svg viewBox="0 0 54 54" fill="none" stroke="#c4573a" stroke-width="3" stroke-linecap="round"><path d="M27 48S6 35 6 20a11 11 0 0121-5 11 11 0 0121 5c0 15-21 28-21 28z"/></svg><h3>I Need Help</h3><p>Confidential support for you or someone you love.</p><span>Start here →</span></a>
+<a class="door" style="--c:#1f4a35" href="#learn"><svg viewBox="0 0 54 54" fill="none" stroke="#1f4a35" stroke-width="3" stroke-linecap="round"><path d="M6 12h16a5 5 0 015 5v27a4 4 0 00-4-4H6zM48 12H32a5 5 0 00-5 5v27a4 4 0 014-4h17z"/></svg><h3>Learn</h3><p>Plain-language guides to groups, influence and recovery.</p><span>Explore →</span></a>
+<a class="door" style="--c:#b8902a" href="#research"><svg viewBox="0 0 54 54" fill="none" stroke="#b8902a" stroke-width="3" stroke-linecap="round"><circle cx="23" cy="23" r="15"/><path d="M34 34l14 14"/></svg><h3>Research</h3><p>Decades of case studies, reports and analysis.</p><span>Browse →</span></a>
+<a class="door" style="--c:#3d7a8a" href="#about"><svg viewBox="0 0 54 54" fill="none" stroke="#3d7a8a" stroke-width="3" stroke-linecap="round"><circle cx="27" cy="27" r="21"/><path d="M27 24v14M27 16v1"/></svg><h3>About</h3><p>Who we are, our mission, fees and how to support us.</p><span>Meet us →</span></a>
+</div>
+
+<section id="help"><div class="wrap reveal"><div class="eyebrow">How we can help</div><h2>Choose your path</h2><p class="lead">Every story is different. Pick the one closest to yours — you do not need to know the right words.</p>
+<div class="paths">
+<div class="card"><div class="ic" style="background:#fde3dc">🧭</div><h3>I'm in a group and something feels wrong</h3><p>Trust your instincts. We help you understand what you're experiencing — without judgement.</p><a href="mailto:info@dialogueireland.ie">Get confidential advice →</a></div>
+<div class="card"><div class="ic" style="background:#e1efe6">🕊️</div><h3>I have left a group</h3><p>Leaving is a beginning. Find support for the confusion, grief and rebuilding that follow.</p><a href="mailto:info@dialogueireland.ie">Talk to us →</a></div>
+<div class="card"><div class="ic" style="background:#f6ecc9">🤝</div><h3>Someone I love is involved</h3><p>Practical guidance on staying connected and keeping the door open.</p><a href="mailto:info@dialogueireland.ie">Ask for guidance →</a></div>
+<div class="card"><div class="ic" style="background:#dcebf0">🎓</div><h3>I work with people</h3><p>Teachers, clergy, counsellors and gardaí: training and resources for your role.</p><a href="https://dialogueireland.wordpress.com/services-we-offer/">See services →</a></div>
+</div>
+<div class="steps"><div class="step"><i>1</i><h3>You write to us</h3><p>Briefly, in your own words. Nothing is shared without your consent.</p></div><div class="step"><i>2</i><h3>We listen and reply</h3><p>A real person reads your message and answers.</p></div><div class="step"><i>3</i><h3>We point you on</h3><p>Information, a conversation, or the right specialist.</p></div></div></div></section>
+
+<section class="quote"><div class="wrap reveal"><blockquote>Whenever we use the words ‘cult’, ‘cultism’ or ‘cultist’ we are referring solely to the phenomenon where troubling levels of undue psychological influence may exist. This phenomenon can occur in almost any group or organisation.</blockquote><cite>Dialogue Ireland, “Services We Offer” — wording to be confirmed by Mike Garde</cite></div></section>
+
+<section id="learn" class="alt"><div class="wrap reveal"><div class="eyebrow">Learn</div><h2>Understand how influence works</h2><p class="lead">Start with a topic. Each link opens the existing Dialogue Ireland articles — nothing new is invented, only made easier to find.</p>
+<div class="chips" id="chips"></div></div></section>
+
+<section id="research"><div class="wrap reveal"><div class="eyebrow">Research &amp; archive</div><h2>Existing archive and resources</h2><p class="lead">The full Dialogue Ireland library, organised by topic.</p>
+<div class="stats"><div class="stat"><b>2,820</b>articles and posts</div><div class="stat"><b>26</b>information pages</div><div class="stat"><b>A–Z</b>groups &amp; movements</div></div>
+<form class="s" action="https://dialogueireland.wordpress.com/" method="get"><input name="s" placeholder="Search the archive…" aria-label="Search"><button class="btn b1" style="margin:0">Search</button></form>
+<p><a href="https://chambermind.github.io/di-redesign-demo/" style="color:var(--clay);font-weight:700">Open the browsable archive prototype →</a></p></div></section>
+
+<section id="about" class="alt"><div class="wrap reveal"><div class="eyebrow">About</div><h2>An Irish charity for education and dialogue</h2><p class="lead">Dialogue Ireland is a registered charity (20045111) offering information, support and training. It depends on donations.</p>
+<p><a class="btn b1" href="https://dialogueireland.wordpress.com/donations-fees/">Donations &amp; fees</a><a class="btn" style="border:2px solid var(--g)" href="https://dialogueireland.wordpress.com/services-we-offer/">Services we offer</a></p></div></section>
+
+<footer><div class="wrap"><p class="goal">The goal is not to create new information, but to make Dialogue Ireland's existing knowledge easier for people to discover, understand and use.</p><small>Supporting people through education, dialogue and research. · info@dialogueireland.ie · Design concept only, noindex.</small></div></footer>
+<script>
+var T=["Christian groups","Scientology","Coercive control","Leaving a group","Families","Cults in schools","Spiritual abuse","Recovery"],c=document.getElementById('chips');
+T.forEach(function(t){var a=document.createElement('a');a.textContent=t;a.href='https://dialogueireland.wordpress.com/?s='+encodeURIComponent(t);c.appendChild(a)});
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('in')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(function(e){io.observe(e)});
+</script></body></html>
